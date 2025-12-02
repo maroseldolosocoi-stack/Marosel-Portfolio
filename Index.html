@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Marosel | Portfolio</title>
+
+   <!-- AOS Scroll Animation -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           scroll-behavior: smooth;
+       }
+
+       body {
+           font-family: Georgia, Verdana;
+           background: black;
+           color: white;
+           overflow-x: hidden;
+       }
+
+       /* Fullscreen video background */
+       #video-bg {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           z-index: -2; /* behind everything */
+       }
+       
+       nav {
+           position: fixed;
+           top: 0;
+           width: 100%;
+           padding: 15px 40px;
+           display: flex;
+           justify-content: space-between;
+           background: rgba(0,0,0,0.6);
+           backdrop-filter: blur(10px);
+           z-index: 10;
+       }
+
+       nav a {
+           margin: 0 15px;
+           text-decoration: none;
+           color: white;
+           font-weight: bold;
+       }
+
+       nav a:hover {
+           color: #37d3b4;
+       }
+
+       /* Background particles */
+       #particles-js {
+           position: fixed;
+           width: 100%;
+           height: 100%;
+           z-index: -1;
+           top: 0;
+           left: 0;
+       }
+
+       /* ========== SECTIONS ========== */
+       section {
+           min-height: 100vh;
+           padding: 120px 100px 60px;
+           text-align: center;
+       }
+
+       h1.section-title {
+           font-size: 3rem;
+           margin-bottom: 20px;
+           animation: fadeIn 2s;
+       }
+
+       @keyframes fadeIn {
+           from { opacity: 0; transform: translateY(20px); }
+           to { opacity: 1; transform: translateY(0); }
+       }
+
+       /* HERO */
+       #home img {
+           width: 180px;
+           height: 180px;
+           border-radius: 50%;
+           border: 4px solid #37d3b1;
+           margin-bottom: 20px;
+           animation: fadeIn 2s ease;
+       }
+
+       #home button {
+           margin-top: 25px;
+           padding: 15px 30px;
+           background: #37d3be;
+           border: none;
+           font-size: 1.2rem;
+           border-radius: 10px;
+           cursor: pointer;
+           animation: bounce 1.5s infinite;
+           color: white;
+       }
+
+       @keyframes bounce {
+           0%,100% { transform: translateY(0); }
+           50% { transform: translateY(-12px); }
+       }
+
+       /* ABOUT */
+       .about-text {
+           width: 70%;
+           margin: auto;
+           font-size: 1.2rem;
+           line-height: 1.7;
+       }
+
+       /* SKILLS */
+       .skills-grid {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 25px;
+           width: 70%;
+           margin: auto;
+           font-size: 1.3rem;
+       }
+
+       .skill-box {
+           padding: 20px;
+           background: rgba(255,255,255,0.1);
+           border-radius: 10px;
+       }
+
+       /* PROJECTS */
+       .projects {
+           display: flex;
+           justify-content: center;
+           gap: 30px;
+       }
+
+       .project-card {
+           width: 300px;
+           padding: 20px;
+           border-radius: 10px;
+           background: rgba(255,255,255,0.08);
+           box-shadow: 0 0 10px rgba(255,255,255,0.2);
+       }
+
+       .project-card img {
+           width: 100%;
+           border-radius: 10px;
+           margin-bottom: 10px;
+       }
+
+       /* CONTACT */
+       #contact button {
+           margin-top: 20px;
+           padding: 15px 30px;
+           background: #4dffcd;
+           border: none;
+           font-size: 1.2rem;
+           border-radius: 10px;
+           cursor: pointer;
+           animation: pulse 1.5s infinite;
+       }
+
+       @keyframes pulse {
+           0% { transform: scale(1); }
+           50% { transform: scale(1.07); }
+           100% { transform: scale(1); }
+       }
+   </style>
+</head>
+
+<body>
+
+<!-- Video background -->
+<video id="video-bg" autoplay muted loop>
+   <source src="c:\Users\Jastin Quiamco\Desktop\Background video.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+</video>
+
+<nav>
+   <h2>Marosel Portfolio</h2>
+   <div>
+       <a href="#home">Home</a>
+       <a href="#about">About Me</a>
+       <a href="#social links">Social Links</a>
+       <a href="#projects">Projects</a>
+       <a href="#contact">Contact</a>
+   </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section id="home">
+   <img src="c:\Users\Jastin Quiamco\Desktop\Marosel Doloso.jpg" alt="Profile">
+   <h1 class="section-title" data-aos="fade-down">Hello, I'm Marosel Doloso</h1>
+   <p data-aos="fade-up">"Decoding the future, one IT solution at a time"</p>
+   <p data-aos="fade-up">Innovator | Mentor | Tech Visionary</p>
+
+   <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+       Hire Me
+   </button>
+</section>
+
+<!-- ========== ABOUT SECTION ========== -->
+<section id="about">
+   <h1 class="section-title" data-aos="fade-up">About Me</h1>
+   <p class="about-text" data-aos="fade-right">
+       IT specialist and 3rd-year student at Philippine Christian University, focused on transforming 
+       organizational success through innovative solutions. Skilled in teamwork, project management, 
+       problem-solving, and technology adaptation, ready to revolutionize a dynamic corporate setting.
+   </p>
+</section>
+
+<!-- ========== Social Links ========== -->
+<section id="social links">
+   <h1 class="section-title" data-aos="zoom-in">Social Links</h1>
+
+   <div class="skills-grid">
+       <div class="skill-box" data-aos="fade-up">
+           <a href="https://www.facebook.com/Ataliyahmaru/" target="_blank" style="color:white; text-decoration:none;">
+               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/facebook.svg" alt="Facebook" width="25" style="vertical-align:middle; margin-right:5px;">
+               Facebook
+           </a>
+       </div>
+
+       <div class="skill-box" data-aos="fade-up">
+           <a href="https://www.instagram.com/ataliyahmaru/" target="_blank" style="color:white; text-decoration:none;">
+               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram" width="25" style="vertical-align:middle; margin-right:5px;">
+               Instagram
+           </a>
+       </div>
+
+       <div class="skill-box" data-aos="fade-up">
+           <a href="https://mail.google.com/mail/u/1/#inbox" target="_blank" style="color:white; text-decoration:none;">
+               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/gmail.svg" alt="Email" width="25" style="vertical-align:middle; margin-right:5px;">
+               Email Me
+           </a>
+       </div>
+   </div>
+</section>
+
+<!-- ========== PROJECTS SECTION ========== -->
+<section id="projects">
+   <h1 class="section-title" data-aos="zoom-in">Projects</h1>
+
+   <div class="projects">
+       <div class="project-card" data-aos="flip-left">
+           <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\MyBirthMonth.png">
+           <h3>My Birth Month Calendar</h3>
+           <p>Exploring the code that brings my Birth Month Calendar to life—combining data, design, and interactivity.</p>
+       </div>
+
+       <div class="project-card" data-aos="flip-up">
+           <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\MyResume.png">
+           <h3>My Resume</h3>
+           <p>Building My Future, One Line at a Time: It's more than just a job application; it's my journey.</p>
+       </div>
+
+         <div class="project-card" data-aos="flip-right">
+           <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\Flow Pay.png">
+           <h3>My Flow Pay</h3>
+           <p></p>
+       </div>
+
+        <div class="project-card" data-aos="flip-right">
+           <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\Mobile App.png">
+           <h3>My Mobile App</h3>
+           <p></p>
+       </div>
+
+        <div class="project-card" data-aos="flip-right">
+           <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\MyPcuEform.png">
+           <h3>My PCU Enrollment Form</h3>
+           <p>A passion project to streamline student registration and make life easier for everyone.</p>
+       </div>
+
+       <div class="project-card" data-aos="flip-right">
+           <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\Register.png">
+           <h3>My Register</h3>
+           <p>Streamlining PCU registration with this Android Studio Project.</p>
+       </div>
+   </div>
+</section>
+
+
+<!-- ========== PROJECTS SECTION (Skills & Achievements) ========== -->
+<section id="projects">
+   <h1 class="section-title" data-aos="zoom-in">My Skills & Achievements</h1>
+
+   <div class="projects">
+       <div class="project-card" data-aos="flip-left">
+               <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\MyHandArt.png" alt="My Hand Art">
+               <h3>My Hand Art</h3>
+           </a>
+       </div>
+
+       <div class="project-card" data-aos="flip-up">
+               <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\MyAchievement.jpg" alt="My Achievement">
+               <h3>My Achievement</h3>
+               <p>Recognized for dedication and excellence in my studies with this Certificate of Excellence in Information Management.</p>
+
+           </a>
+       </div>
+
+       <div class="project-card" data-aos="flip-right">
+               <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\My Mosaic Art.jpg" alt="My Mosaic Art">
+               <h3>My Mosaic Art</h3>
+           </a>
+       </div>
+
+       <div class="project-card" data-aos="flip-left">
+               <img src="c:\Users\Jastin Quiamco\Desktop\Project\images\My Cubism Art.png" alt="My Cubism Art">
+               <h3>My Cubism Art</h3>
+           </a>
+       </div>
+   </div>
+</section>
+
+
+<!-- ========== CONTACT SECTION ========== -->
+<section id="contact">
+   <h1 class="section-title" data-aos="fade-down">Contact Me</h1>
+   <p data-aos="fade-right">Let's connect! Reach out on my socials or send me a message. ✉️ Looking forward to collaborating!
+</p>
+
+   <button onclick="window.open('https://www.facebook.com/Ataliyahmaru/', '_blank')">
+       Message Me
+   </button>
+</section>
+
+<!-- AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- PARTICLES JS -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+   particlesJS.load("particles-js", "https://cdn.jsdelivr.net/npm/particles.js/demo/particles.json");
+</script>
+
+</body>
+</html>
